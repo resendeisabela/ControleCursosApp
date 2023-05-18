@@ -17,6 +17,6 @@ public class CursoAluno {
     public String toString() {
         return
                 alunoId + " " + nomeAluno +
-                        "\n" + " Curso" + nomeCurso ;
+                        "\n" + " Curso: " + nomeCurso ;
     }
 }
