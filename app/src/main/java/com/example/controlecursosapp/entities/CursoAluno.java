@@ -1,10 +1,10 @@
 package com.example.controlecursosapp.entities;
 
 public class CursoAluno {
-    int cursoId;
-    int alunoId;
-    String nomeCurso;
-    String nomeAluno;
+    public int cursoId;
+    public int alunoId;
+    public String nomeCurso;
+    public String nomeAluno;
 
     public int getCursoId() {
         return cursoId;

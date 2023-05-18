@@ -26,5 +26,5 @@ public abstract class CursosOnline extends RoomDatabase {
 
     public abstract AlunoDao alunoModel();
     public abstract CursoDao cursoModel();
-    public abstract CursoAlunoDao cursoALunoModel();
+    public abstract CursoAlunoDao cursoAlunoModel();
 }

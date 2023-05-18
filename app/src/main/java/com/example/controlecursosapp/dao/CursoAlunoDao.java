@@ -9,9 +9,10 @@ import java.util.List;
 
 @Dao
 public interface CursoAlunoDao {
-//    @Query("SELECT Aluno.cursoId AS cursoId, Aluno.nomeAluno " +
-//            "AS nomeAluno, Curso.nomeCurso AS nomeCurso " +
-//            "FROM Aluno INNER JOIN Curso ON Aluno.cursoId = Curso.cursoId")
+    @Query("SELECT Aluno.alunoId AS alunoId, Aluno.nomeAluno AS nomeAluno, Curso.nomeCurso AS nomeCurso, Aluno.cursoId AS cursoId " +
+            "FROM Aluno " +
+            "INNER JOIN Curso ON Aluno.cursoId = Curso.cursoId")
+    List<CursoAluno> getAllCursoAluno();
 
-    //List<CursoAluno> getAllCursoAluno();
+
 }
