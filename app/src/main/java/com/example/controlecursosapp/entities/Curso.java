@@ -44,10 +44,8 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso{" +
-                "cursoId=" + cursoId +
-                ", nomeCurso='" + nomeCurso + '\'' +
-                ", qtdeHoras=" + qtdeHoras +
-                '}';
+        return cursoId +
+                " Curso: " + nomeCurso +
+                " Carga horária" + qtdeHoras;
     }
 }
