@@ -37,6 +37,11 @@ public class Curso {
     public Curso() {
     }
 
+    public Curso(String nomeCurso, int qtdeHoras) {
+        this.nomeCurso = nomeCurso;
+        this.qtdeHoras = qtdeHoras;
+    }
+
     @Override
     public String toString() {
         return "Curso{" +
