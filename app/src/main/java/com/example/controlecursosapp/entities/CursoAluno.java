@@ -9,6 +9,9 @@ public class CursoAluno {
     public int getCursoId() {
         return cursoId;
     }
+    public int getAlunoId(){
+        return alunoId;
+    }
 
     @Override
     public String toString() {
