@@ -14,6 +14,15 @@ public class Aluno {
     String nomeAluno;
     String emailAluno;
     String telefoneAluno;
+    String nomeCurso;
+
+    public String getNomeCurso() {
+        return nomeCurso;
+    }
+
+    public void setNomeCurso(String nomeCurso) {
+        this.nomeCurso = nomeCurso;
+    }
 
     public int getAlunoId() {
         return alunoId;
