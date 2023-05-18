@@ -30,7 +30,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/edtNomeCurso"
+            android:id="@+id/edtNomeAluno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -74,7 +74,7 @@
                 android:text="Voltar" />
 
             <Button
-                android:id="@+id/btnExcluirNomeCurso"
+                android:id="@+id/btnExcluirNomeAluno"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
@@ -84,7 +84,7 @@
                 android:text="Excluir" />
 
             <Button
-                android:id="@+id/btnSalvarNomeCurso"
+                android:id="@+id/btnSalvarNomeAluno"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"

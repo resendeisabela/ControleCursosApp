@@ -46,7 +46,7 @@ public class AlunoView extends AppCompatActivity {
         if(dbAlunoID >= 0){
             preencheAluno();
         } else {
-            binding.btnExcluirNomeCurso.setVisibility(View.GONE);
+            binding.btnExcluirNomeAluno.setVisibility(View.GONE);
         }
         preencheCursos();
     }
@@ -54,7 +54,7 @@ public class AlunoView extends AppCompatActivity {
 
     private void preencheAluno() {
         dbAluno = db.alunoModel().getAluno(dbAlunoID);
-        binding.edtNomeCurso.setText(dbAluno.getCursoId());
+        binding.edtNomeAluno.setText(dbAluno.getNomeAluno());
     }
 
 
@@ -69,14 +69,14 @@ public class AlunoView extends AppCompatActivity {
     }
 
     public void salvarAluno(View view) {
-        String nomeCurso = binding.edtNomeCurso.getText().toString();
+        String nomeAluno = binding.edtNomeAluno.getText().toString();
         String novoCurso = "";
 
         if(spnCursos.getSelectedItem() != null){
             novoCurso = spnCursos.getSelectedItem().toString();
         }
-        if(nomeCurso.equals("")){
-            Toast.makeText(this, "O curso é obrigatório", Toast.LENGTH_SHORT).show();
+        if(nomeAluno.equals("")){
+            Toast.makeText(this, "O nome do aluno é obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
         if(novoCurso.equals("")) {
@@ -85,7 +85,7 @@ public class AlunoView extends AppCompatActivity {
         }
 
         Aluno novoAluno = new Aluno();
-        novoAluno.setNomeCurso(nomeCurso);
+        novoAluno.setNomeAluno(nomeAluno);
         novoAluno.setCursoId(cursos.get(
                 spnCursos.getSelectedItemPosition()).getCursoId());
         if(dbAluno != null){
