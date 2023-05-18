@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.controlecursosapp.database.CursosOnline;
-import com.example.controlecursosapp.databinding.ActivityAlunoListBinding;
 import com.example.controlecursosapp.databinding.ActivityAlunoViewBinding;
 import com.example.controlecursosapp.entities.Aluno;
 import com.example.controlecursosapp.entities.Curso;
@@ -71,16 +70,16 @@ public class AlunoView extends AppCompatActivity {
 
     public void salvarAluno(View view) {
         String nomeCurso = binding.edtNomeCurso.getText().toString();
-        String novaMarca = "";
+        String novoCurso = "";
 
         if(spnCursos.getSelectedItem() != null){
-            novaMarca = spnCursos.getSelectedItem().toString();
+            novoCurso = spnCursos.getSelectedItem().toString();
         }
         if(nomeCurso.equals("")){
             Toast.makeText(this, "O curso é obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(novaMarca.equals("")) {
+        if(novoCurso.equals("")) {
             Toast.makeText(this, "Entre com um curso.", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -92,11 +91,11 @@ public class AlunoView extends AppCompatActivity {
         if(dbAluno != null){
             novoAluno.setCursoId(dbAlunoID);
             db.alunoModel().update(novoAluno);
-            Toast.makeText(this, "Celular atualizado com sucesso.",
+            Toast.makeText(this, "Aluno atualizado com sucesso.",
                     Toast.LENGTH_SHORT).show();
         } else {
             db.alunoModel().insertAll(novoAluno);
-            Toast.makeText(this, "Celular cadastrado com sucesso.",
+            Toast.makeText(this, "Aluno cadastrado com sucesso.",
                     Toast.LENGTH_SHORT).show();
         }
         finish();
