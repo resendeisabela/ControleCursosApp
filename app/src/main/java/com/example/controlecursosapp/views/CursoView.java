@@ -52,8 +52,14 @@ public class CursoView extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             return;
         }
+        int qtdeHoras = Integer.parseInt(binding.edtCargaHoraria.getText().toString());
+//        if(binding.edtCargaHoraria.getText().toString().trim().length() <= 0 ){
+//            Toast.makeText(this, "Adicione uma carga horária ao curso.",
+//                    Toast.LENGTH_SHORT).show();
+//            return;
+//        }
 
-        Curso thisCurso = new Curso(nomeCurso, 30);
+        Curso thisCurso = new Curso(nomeCurso, qtdeHoras);
 
         if (dbCurso != null) {
             thisCurso.setCursoId(dbCursoID);
