@@ -89,7 +89,7 @@ public class AlunoView extends AppCompatActivity {
         novoAluno.setCursoId(cursos.get(
                 spnCursos.getSelectedItemPosition()).getCursoId());
         if(dbAluno != null){
-            novoAluno.setCursoId(dbAlunoID);
+            novoAluno.setAlunoId(dbAlunoID);
             db.alunoModel().update(novoAluno);
             Toast.makeText(this, "Aluno atualizado com sucesso.",
                     Toast.LENGTH_SHORT).show();
