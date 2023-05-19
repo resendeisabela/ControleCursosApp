@@ -45,6 +45,7 @@ public class CursoView extends AppCompatActivity {
     private void getDBCurso() {
         dbCurso = db.cursoModel().getCurso(dbCursoID);
         binding.edtCurso.setText(dbCurso.getNomeCurso());
+        binding.edtCargaHoraria.setText(String.valueOf(dbCurso.getQtdeHoras()));
     }
 
     public void salvarCurso(View view) {
