@@ -93,6 +93,15 @@
                 android:onClick="salvarAluno"
                 android:text="Salvar" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddCurso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="70dp"
+            android:text="Adicionar \ncurso"
+            android:onClick="salvarCurso"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

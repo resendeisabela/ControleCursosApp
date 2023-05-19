@@ -4,15 +4,13 @@ import android.content.DialogInterface;
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.controlecursosapp.R;
-import com.example.controlecursosapp.databinding.ActivityCursoViewBinding;
 import com.example.controlecursosapp.database.CursosOnline;
+import com.example.controlecursosapp.databinding.ActivityCursoViewBinding;
 import com.example.controlecursosapp.entities.Curso;
 
 public class CursoView extends AppCompatActivity {
