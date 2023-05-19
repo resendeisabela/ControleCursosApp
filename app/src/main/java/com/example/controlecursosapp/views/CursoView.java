@@ -4,11 +4,13 @@ import android.content.DialogInterface;
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.controlecursosapp.R;
 import com.example.controlecursosapp.databinding.ActivityCursoViewBinding;
 import com.example.controlecursosapp.database.CursosOnline;
 import com.example.controlecursosapp.entities.Curso;
@@ -52,12 +54,13 @@ public class CursoView extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             return;
         }
+
+        if(binding.edtCargaHoraria.getText().toString().trim().isEmpty()){
+            Toast.makeText(this, "Adicione uma carga horária ao curso.",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         int qtdeHoras = Integer.parseInt(binding.edtCargaHoraria.getText().toString());
-//        if(binding.edtCargaHoraria.getText().toString().trim().length() <= 0 ){
-//            Toast.makeText(this, "Adicione uma carga horária ao curso.",
-//                    Toast.LENGTH_SHORT).show();
-//            return;
-//        }
 
         Curso thisCurso = new Curso(nomeCurso, qtdeHoras);
 
