@@ -9,9 +9,12 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.controlecursosapp.MainActivity;
+import com.example.controlecursosapp.R;
 import com.example.controlecursosapp.databinding.ActivityCursoListBinding;
 import com.example.controlecursosapp.database.CursosOnline;
 import com.example.controlecursosapp.entities.Curso;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -32,10 +35,11 @@ public class CursoList  extends AppCompatActivity {
         db = CursosOnline.getDatabase(getApplicationContext());
         listViewCursos = binding.listCursos;
 
-        binding.btnHomeCurso.setOnClickListener(new View.OnClickListener() {
+        binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public void onClick(View view) {
+                Intent intent = new Intent(CursoList.this, MainActivity.class);
+                startActivity(intent);
             }
         });
         binding.btnAdd.setOnClickListener(new View.OnClickListener() {

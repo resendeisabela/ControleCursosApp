@@ -10,9 +10,9 @@
         android:id="@+id/btnCursos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="143dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="102dp"
-        android:text="Curso"
+        android:text="Visualizar cursos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +20,13 @@
         android:id="@+id/btnAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="60dp"
-        android:text="Aluno"
+        android:text="Visualizar alunos"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCursos" />
+
+    <include layout="@layout/fab_layout"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

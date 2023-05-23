@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.controlecursosapp.MainActivity;
 import com.example.controlecursosapp.database.CursosOnline;
 import com.example.controlecursosapp.databinding.ActivityAlunoViewBinding;
 import com.example.controlecursosapp.entities.Aluno;
@@ -39,6 +40,14 @@ public class AlunoView extends AppCompatActivity {
         spnCursos = binding.spnCursos;
         dbAlunoID = getIntent().getIntExtra(
                 "ALUNO_SELECIONADO_ID", -1);
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AlunoView.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

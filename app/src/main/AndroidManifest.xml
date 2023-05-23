@@ -29,7 +29,7 @@
             android:name=".views.CursoList"
             android:exported="false"
             android:label="@string/title_activity_curso_list"
-            android:theme="@style/Theme.ControleCursosApp">
+            android:theme="@style/Theme.ListPage">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -2,6 +2,10 @@ package com.example.controlecursosapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.controlecursosapp.MainActivity;
+import com.example.controlecursosapp.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,13 +36,15 @@ public class AlunoList extends AppCompatActivity {
         db = CursosOnline.getDatabase(getApplicationContext());
         listViewAluno = binding.listAluno;
 
-        binding.btnHomeCel.setOnClickListener(new View.OnClickListener() {
+        binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public void onClick(View view) {
+                Intent intent = new Intent(AlunoList.this, MainActivity.class);
+                startActivity(intent);
             }
         });
-        binding.btnAddCel.setOnClickListener(new View.OnClickListener() {
+
+        binding.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AlunoList.this, AlunoView.class));

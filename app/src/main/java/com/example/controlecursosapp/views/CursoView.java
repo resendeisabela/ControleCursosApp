@@ -1,6 +1,7 @@
 package com.example.controlecursosapp.views;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.controlecursosapp.MainActivity;
 import com.example.controlecursosapp.database.CursosOnline;
 import com.example.controlecursosapp.databinding.ActivityCursoViewBinding;
 import com.example.controlecursosapp.entities.Curso;
@@ -28,6 +30,14 @@ public class CursoView extends AppCompatActivity {
         db = CursosOnline.getDatabase(getApplicationContext());
         dbCursoID = getIntent().getIntExtra(
                 "CURSO_SELECIONADO_ID", -1);
+
+        binding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CursoView.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
