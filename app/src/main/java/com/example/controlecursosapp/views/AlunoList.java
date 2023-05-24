@@ -34,7 +34,7 @@ public class AlunoList extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         db = CursosOnline.getDatabase(getApplicationContext());
-        listViewAluno = binding.listAluno;
+        listViewAluno = binding.listAlunos;
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override

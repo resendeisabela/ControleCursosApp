@@ -44,41 +44,41 @@ public class CursoView extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if(dbCursoID >= 0) {
-            getDBCurso();
+            preencheCurso();
         } else {
             binding.btnExcluirCurso.setVisibility(View.GONE);
         }
     }
 
-    private void getDBCurso() {
+    private void preencheCurso() {
         dbCurso = db.cursoModel().getCurso(dbCursoID);
-        binding.edtCurso.setText(dbCurso.getNomeCurso());
+        binding.edtNomeCurso.setText(dbCurso.getNomeCurso());
         binding.edtCargaHoraria.setText(String.valueOf(dbCurso.getQtdeHoras()));
     }
 
     public void salvarCurso(View view) {
-        String nomeCurso = binding.edtCurso.getText().toString();
+        String nomeCurso = binding.edtNomeCurso.getText().toString();
         if (nomeCurso.equals("")) {
-            Toast.makeText(this, "Adicione um curso.",
+            Toast.makeText(this, "O nome do curso é obrigatório",
                     Toast.LENGTH_SHORT).show();
             return;
         }
 
         if(binding.edtCargaHoraria.getText().toString().trim().isEmpty()){
-            Toast.makeText(this, "Adicione uma carga horária ao curso.",
+            Toast.makeText(this, "Entre com uma carga horária ao curso",
                     Toast.LENGTH_SHORT).show();
             return;
         }
         int qtdeHoras = Integer.parseInt(binding.edtCargaHoraria.getText().toString());
 
-        Curso thisCurso = new Curso(nomeCurso, qtdeHoras);
+        Curso novoCurso = new Curso(nomeCurso, qtdeHoras);
 
         if (dbCurso != null) {
-            thisCurso.setCursoId(dbCursoID);
-            db.cursoModel().update(thisCurso);
+            novoCurso.setCursoId(dbCursoID);
+            db.cursoModel().update(novoCurso);
             Toast.makeText(this, "Curso atualizado com sucesso.", Toast.LENGTH_SHORT).show();
         } else {
-            db.cursoModel().insertAll(thisCurso);
+            db.cursoModel().insertAll(novoCurso);
             Toast.makeText(this, "Curso criado com sucesso.", Toast.LENGTH_SHORT).show();
         }
         finish();

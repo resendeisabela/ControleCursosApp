@@ -56,7 +56,7 @@ public class AlunoView extends AppCompatActivity {
         if(dbAlunoID >= 0){
             preencheAluno();
         } else {
-            binding.btnExcluirNomeAluno.setVisibility(View.GONE);
+            binding.btnExcluirAluno.setVisibility(View.GONE);
         }
         binding.btnAddCurso.setVisibility(View.VISIBLE);
         preencheCursos();
@@ -98,7 +98,7 @@ public class AlunoView extends AppCompatActivity {
             return;
         }
         if(novoCurso.equals("")) {
-            Toast.makeText(this, "Entre com um curso.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Entre com um curso", Toast.LENGTH_SHORT).show();
             return;
         }
 

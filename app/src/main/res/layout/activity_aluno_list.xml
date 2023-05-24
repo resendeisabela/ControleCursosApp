@@ -6,32 +6,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.AlunoList">
 
-    <ListView
-        android:id="@+id/listAluno"
-        android:layout_width="409dp"
-        android:layout_height="450dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="48dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="370dp"
+        android:layout_height="375dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/rounded_background"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+        android:id="@+id/textTitlePage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:text="Listagem de alunos"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+        <ListView
+            android:id="@+id/listAlunos"
+            android:layout_width="409dp"
+            android:layout_height="450dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
 
     <ImageButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_baseline_add_circle_24"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="542dp" />
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
     <TextView
-        android:id="@+id/textAddCurso"
+        android:id="@+id/textAddAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="Adicionar curso"
+        android:layout_marginTop="56dp"
+        android:text="Adicionar aluno"
+        android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/btnAdd"
-        tools:layout_editor_absoluteY="555dp" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
