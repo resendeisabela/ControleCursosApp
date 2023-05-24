@@ -45,6 +45,6 @@ public class Curso {
     @Override
     public String toString() {
         return cursoId +
-                " Curso: " + nomeCurso + " " + qtdeHoras +"h";
+                ". Curso: " + nomeCurso + " " + qtdeHoras +"h";
     }
 }
