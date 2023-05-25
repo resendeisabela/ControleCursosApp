@@ -6,16 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.controlecursosapp.MainActivity;
+import com.example.controlecursosapp.R;
 import com.example.controlecursosapp.database.CursosOnline;
-import com.example.controlecursosapp.databinding.ActivityAlunoViewBinding;
 import com.example.controlecursosapp.entities.Aluno;
 import com.example.controlecursosapp.entities.Curso;
+import com.example.controlecursosapp.databinding.ActivityAlunoViewBinding;
 
 import java.util.List;
 
@@ -40,6 +42,13 @@ public class AlunoView extends AppCompatActivity {
         spnCursos = binding.spnCursos;
         dbAlunoID = getIntent().getIntExtra(
                 "ALUNO_SELECIONADO_ID", -1);
+
+        binding.btnAddCurso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AlunoView.this, CursoView.class));
+            }
+        });
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +98,7 @@ public class AlunoView extends AppCompatActivity {
                 startActivity(new Intent(AlunoView.this, CursoView.class));
             }
         });
+
 
         if(spnCursos.getSelectedItem() != null){
             novoCurso = spnCursos.getSelectedItem().toString();

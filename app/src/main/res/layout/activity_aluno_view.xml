@@ -99,8 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
-            android:onClick="salvarCurso"
-            android:text="Adicionar \ncurso" />
+            android:text="Adicionar \ncurso"
+            android:onClick="salvarCurso"/>
     </LinearLayout>
 
 
