@@ -43,12 +43,12 @@ public class AlunoView extends AppCompatActivity {
         dbAlunoID = getIntent().getIntExtra(
                 "ALUNO_SELECIONADO_ID", -1);
 
-//        binding.btnAddCurso.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(AlunoView.this, CursoView.class));
-//            }
-//        });
+        binding.btnAddCurso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AlunoView.this, CursoView.class));
+            }
+        });
 
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
