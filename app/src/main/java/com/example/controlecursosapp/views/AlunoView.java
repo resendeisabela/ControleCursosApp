@@ -43,12 +43,13 @@ public class AlunoView extends AppCompatActivity {
         dbAlunoID = getIntent().getIntExtra(
                 "ALUNO_SELECIONADO_ID", -1);
 
-        binding.btnAddCurso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AlunoView.this, CursoView.class));
-            }
-        });
+//        binding.btnAddCurso.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(AlunoView.this, CursoView.class));
+//            }
+//        });
+
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,20 +85,23 @@ public class AlunoView extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, cursos);
         spnCursos.setAdapter(cursosAdapter);
         if(dbAluno != null) {
-            spnCursos.setSelection(dbAluno.getCursoId() - 1);
+            int cursoId = dbAluno.getCursoId();
+            int selectedIndex = -1;
+            for (int i = 0; i < cursos.size(); i++) {
+                if (cursos.get(i).getCursoId() == cursoId) {
+                    selectedIndex = i;
+                    break;
+                }
+            }
+            if (selectedIndex != -1) {
+                spnCursos.setSelection(selectedIndex);
+            }
         }
     }
 
     public void salvarAluno(View view) {
         String nomeAluno = binding.edtNomeAluno.getText().toString();
         String novoCurso = "";
-
-        binding.btnAddCurso.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AlunoView.this, CursoView.class));
-            }
-        });
 
 
         if(spnCursos.getSelectedItem() != null){
