@@ -76,6 +76,8 @@ public class AlunoView extends AppCompatActivity {
     private void preencheAluno() {
         dbAluno = db.alunoModel().getAluno(dbAlunoID);
         binding.edtNomeAluno.setText(dbAluno.getNomeAluno());
+        binding.edtEmailAluno.setText(dbAluno.getEmailAluno());
+        binding.edtTelAluno.setText(dbAluno.getTelefoneAluno());
     }
 
 
@@ -102,6 +104,8 @@ public class AlunoView extends AppCompatActivity {
     public void salvarAluno(View view) {
         String nomeAluno = binding.edtNomeAluno.getText().toString();
         String novoCurso = "";
+        String emailAluno = binding.edtEmailAluno.getText().toString();
+        String telAluno = binding.edtTelAluno.getText().toString();
 
 
         if(spnCursos.getSelectedItem() != null){
@@ -111,6 +115,14 @@ public class AlunoView extends AppCompatActivity {
             Toast.makeText(this, "O nome do aluno é obrigatório", Toast.LENGTH_SHORT).show();
             return;
         }
+        if(emailAluno.equals("")){
+            Toast.makeText(this, "O email do aluno é obrigatório", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(telAluno.equals("")){
+            Toast.makeText(this, "O telefone do aluno é obrigatório", Toast.LENGTH_SHORT).show();
+            return;
+        }
         if(novoCurso.equals("")) {
             Toast.makeText(this, "Entre com um curso", Toast.LENGTH_SHORT).show();
             return;
@@ -118,6 +130,8 @@ public class AlunoView extends AppCompatActivity {
 
         Aluno novoAluno = new Aluno();
         novoAluno.setNomeAluno(nomeAluno);
+        novoAluno.setEmailAluno(emailAluno);
+        novoAluno.setTelefoneAluno(telAluno);
         novoAluno.setCursoId(cursos.get(
                 spnCursos.getSelectedItemPosition()).getCursoId());
         if(dbAluno != null){

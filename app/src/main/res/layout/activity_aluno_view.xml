@@ -6,16 +6,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.AlunoView">
 
+    <androidx.core.widget.NestedScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:ignore="MissingConstraints">
+
     <LinearLayout
-        android:layout_width="370dp"
-        android:layout_height="700dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_weight="1">
         <TextView
             android:id="@+id/textTitlePage"
             android:layout_width="match_parent"
@@ -46,6 +53,42 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Email"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtEmailAluno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_editext"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Telefone"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edtTelAluno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_editext"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:textSize="20sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Curso"
             android:textSize="18sp" />
 
@@ -57,10 +100,12 @@
                 android:textSize="25sp" ></Spinner>
 
         <LinearLayout
+            android:id="@+id/linearLayoutButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:gravity="center"
+            android:layout_gravity="bottom"
             android:orientation="horizontal">
 
             <Button
@@ -102,6 +147,7 @@
             android:text="Adicionar \ncurso"
             android:onClick="salvarCurso"/>
     </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
